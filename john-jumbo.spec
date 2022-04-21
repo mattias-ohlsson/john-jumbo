@@ -29,6 +29,7 @@ John the Ripper.
 
 %prep
 %autosetup -n john-%{john_release}/src
+sed -i 's#\$JOHN/john.conf#%{_sysconfdir}/john.conf#' params.h
 
 %build
 %configure --with-systemwide
